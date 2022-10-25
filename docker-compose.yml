@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+    python-demo:
+        image: hi-saurav
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: python-code
+        volumes: 
+             -  .:/demo
+        command: python3 app.python
+
+    ngnix-server:
+        image: nginx
+        container_name: nginx-server-demo
+        ports:
+            - 8080:80
+
+        
